@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "call-component-super-lifecycle-hook": true
+  }
+}

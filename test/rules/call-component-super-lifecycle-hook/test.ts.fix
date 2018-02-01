@@ -1,0 +1,23 @@
+// good
+
+class Base {
+    componentDidMount() {}
+}
+
+class A extends Base {
+    f() {
+    }
+    componentDidMount() {
+        super.componentDidMount()
+    }
+}
+
+// bad
+
+class B extends Base {
+    f() {
+    }
+    componentDidMount() {
+        super.componentDidMount.apply(this, arguments);
+    }
+}
