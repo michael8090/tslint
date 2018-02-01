@@ -72,7 +72,7 @@ function checkClassHasSuperReactCall(node: ts.ClassDeclaration, ctx: Lint.WalkCo
                 const indent = c.body.getLastToken().getFullText().search(/\S/) + 3;
                 const blanks = " ".repeat(indent);
                 ctx.addFailureAtNode(c.getFirstToken(), Rule.FAILURE_STRING, [
-                    Lint.Replacement.appendText(c.body.statements.pos, `${br}${blanks}super.componentDidMount.apply(this, arguments);`),
+                    Lint.Replacement.appendText(c.body.statements.pos, `${br}${blanks}super.${nameText}.apply(this, arguments);`),
                 ]);
             }
         }
